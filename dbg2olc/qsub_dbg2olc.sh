@@ -8,16 +8,16 @@
 module load mchakrab/dbg2olc
 module load smrtanalysis canu/2016-01-13
 
-ln -s ../platanus/"chardonnay_plat_contig.fa"
-
+ln -s ../platanus/chardonnay_plat_contig.fa
+ln -s ../canu15/chardonnay.fastq
 
 CONTIGFILE="chardonnay_plat_contig.fa"
 FULLPBREADS="chardonnay.fastq"
 BACKBONERAWFA="backbone_raw.fasta"
 DBG2OLCCONS="DBG2OLC_Consensus_info.txt"
 COVERAGE=30
-#GENOMESIZE=600000000
-GENOMESIZE=550000000
+GENOMESIZE=600000000
+#GENOMESIZE=550000000
 #GENOMESIZE=12000000
 #GENOMESIZE=14000000
 #GENOMESIZE=15000000
@@ -48,11 +48,12 @@ fi
 ##For 50x-100x PacBio data:
 #KmerCovTh 2-10, MinOverlap 50-150, AdaptiveTh 0.01-0.02
 
+#kval determined from canu meryl kmer % coverage distribution
 MYLD=0
-MYKVAL=17
+MYKVAL=31
 MYKMERCOV=2
 MYADAPT=0.01
-MYMINOVL=25
+MYMINOVL=30
 MYRMCH=1
 
 echo "begin dbg2olc step 1 overlap"
